@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Health Assessment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <style type="text/css">
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            ul {
+                li: right;
+            }
+            .navbar-default .navbar-nav > li > a {
+                color: black;
+                font-weight: bold;
+                margin: 0;
+           }
+                
+             
+	   .navbar-header > a {
+                
+		    color: black;
+          
+	          font-weight: bold;
+       
+	         }
+                
+             
+	   .navbar {
+                  
+		  margin:0;
+         
+	       }
+              
+	  .myFooter {
+           
+	        left: 0;
+            
+	       bottom: 0;
+           
+	        width: 100%;
+         
+	          height: 6vh;
+           
+	        background-color: #2196F3;
+       
+            color: white;
+                 
+	  text-align: center;
+             
+      margin-top: 2vh;
+              
+  }
+
+
+                
+             
+ .row {
+                   
+	 padding-top: 2vh;
+    
+                padding-bottom: 2vh;
+     
+           }
+              
+  .illness {
+                  
+  border-radius: 10px;
+           
+         margin: auto;
+                  
+  padding: 3vh;
+                   
+ background: #ECF0F1;
+               
+ }
+                
+               
+ #screening-button {
+                  
+  margin: 4vh auto 2vh auto;
+             
+       padding: 2vh;
+                   
+ background-color: #2196F3;
+                 
+   text-align: center;
+                    
+color: white;
+                    
+display: block;
+                    
+width: 20vw;
+                    
+opacity: 0.9;
+                    
+border: none;
+                
+}
+                
+                
+        
+        #screening-button:hover {
+                    
+opacity:1;
+               
+ }
+                
+
+               
+ 
+
+           
+ @media screen and (max-width: 700px) {
+      
+              #screening-button {
+                       
+	 width: 50vw;
+                  
+  }
+                    
+                 
+   .col-sm-6 {
+                       
+ padding-top: 4vh;
+                   
+     padding-bottom: 4vh;
+            
+        }
+               
+ }
+               
+ </style>
+    </head>
+    <body onresize="w3_close()" onload="fillContent()">
+        <!--Collapsible sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width: 17%;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">&times;</button>
+            <!--User profile-->
+            <div style="width:100%; height:15%; display:flex;">
+                <div style="width:40%; display:flex; justify-content:flex-end; align-items:center;">
+                    <img src="../images/femaleUser.png" style="border-radius:50%; width:60%; margin-right:4%;"/>
+                </div>
+                <div style="width:60%; display:flex; flex-direction:column; justify-content:center; font-size:12px; color:#4285F4;">
+                    <p style="margin:0;">Jane Doe</p>
+                    <p style="margin:0;">21 | Female</p>
+                </div>
+            </div>
+            <!--Navigation Items-->
+            <div id="sidebarItemModel" style="width:100%; height:8%; display:flex; border:1px solid #E6EBF1;">
+                <div style="width:2%; height:100%; background:#4285F4"></div>
+                <div style="width:93%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-left:16%; color:#74838B;"></div>
+                <div style="width:5%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-right:12%; color:#74838B;">&gt;</div>
+            </div>
+            <div style="height:29%;"></div>
+            <div style="width:100%; height:8%; display:flex; border:1px solid #E6EBF1;">
+                <div style="width:2%; height:100%; background:#FFF"></div>
+                <div style="width:93%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-left:16%; color:#74838B;"><a href="user_logout">Sign Out</a></div>
+                <div style="width:5%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-right:12%; color:#FFF;">&gt;</div>
+            </div>
+        </div>
+        <!--Heading-->
+        <div class="w3-main" style="margin-left:17%; height:100vh;">
+            <div style="height:15vh; display:flex; align-items:center; background:#4285F4;">
+                <button class="w3-button w3-xlarge w3-hide-large" style="width:5%; color:#FFF;" onclick="w3_open()">&#9776;</button>
+                <!--Logo & Branding-->
+                <div style="width:95%; height:100%; display:flex; flex-direction:row; align-items:center;">
+                    <div style="margin-left:4%;">
+                        <img src="../images/logo_name_h_blue.png" style="height:55px; display:block;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Content-->
+            <div style="height:85vh; overflow:auto;">
+<!--            INCLUDE CONTENT HERE-->       
+      
+	  <div class="container">
+    
+        <h1 style="text-align: center;">Self-Assessment</h1>
+      
+	      <p style="text-align: justify;">The following questions will help identify if you might be suffering from depression; the test is an indicator only and not meant to replace a full assessment by a qualified clinician. When completing the following questions it is useful to think about how they have applied to you over the last few weeks or months..Take this self-assessment test to see if you may be someone who could benefit from the treatment and support of a mental health professional.</p><br><br>
+            <div class = "row">
+                <div class = "col-sm-6" id = "depression">
+                    <div class = "illness">
+                        <h3 style="text-align: center;">Depression</h3>
+                        <p style="text-align: justify;"> This assessment is designed to determine whether you presently have, or are at risk for developing a depressive disorder, along with assessing whether your mindset makes you more prone to depression. Examine the following statements and indicate how well it describes you or how often you feel that way..</p>
+              
+          <a href="depression_dashboard.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+           
+         </div>
+                
+	</div>
+                
+	<div class = "col-sm-6" id = "anxiety">
+                  
+	  <div class = "illness">
+                        
+	<h3 style="text-align: center;">Generalized Anxiety Disorder</h3>
+        
+	                <p style="text-align: justify;">Generalized Anxiety Disorder (GAD) is characterized by persistent and excessive worry about a number of different things. People with GAD may anticipate disaster and may be overly concerned about money, health, family, work, or other issues. Individuals with GAD find it difficult to control their worry. </p>
+                        <a href="anxiety_dashboard.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "row">
+                <div class = "col-sm-6" id = "bipolar">
+                    <div class = "illness">
+                        <h3 style="text-align: center;">Bipolar Disorder</h3>
+                        <p style="text-align: justify;">Bipolar disorder is a brain disorder that causes unusual shifts in mood, energy, activity levels, and the ability to carry out day-to-day tasks.People with bipolar disorder experience periods of unusually intense emotion, changes in sleep patterns and activity levels, and unusual behaviors.</p>
+      
+                  <a href="bipolar_dashboard.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+            
+        </div>
+              
+  </div>
+               
+ <div class = "col-sm-6" id = "ocd">
+        
+            <div class = "illness">
+                   
+     <h3 style="text-align: center;">Obsessive Compulsive Disorder</h3>
+    
+                    <p style="text-align: justify;">Obsessive compulsive disorder (OCD) is a mental disorder where people feel the need to check things repeatedly, perform certain routines repeatedly (called "rituals"), or have certain thoughts repeatedly. People are unable to control either the thoughts or the activities for more than a short period of time</p>
+                        <a href="ocd_dashboard.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class = "row">
+                <div class = "col-sm-6" id = "schizophrenia">
+                    <div class = "illness">
+                        <h3 style="text-align: center;">Schizophrenia</h3>
+                        <p style="text-align: justify;">Schizophrenia is a chronic and severe mental disorder that affects how a person thinks, feels, and behaves. People with schizophrenia may seem like they have lost touch with reality. Although schizophrenia is not as common as other mental disorders, the symptoms can be very disabling.</p>
+               
+         <a href="schiz_dashboard.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+                    </div>
+                </div>
+                <div class = "col-sm-6" id = "ptsd">
+                    <div class = "illness">
+                        <h3 style="text-align: center;">Post-Traumatic Stress Disorder</h3>
+                        <p style="text-align: justify;">PTSD is a disorder that develops in some people who have experienced a shocking, scary, or dangerous event.It is natural to feel afraid during and after a traumatic situation. Fear triggers many split-second changes in the body to help defend against danger or to avoid it. </p>
+                        <a href="ptsd.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "row">
+             
+   <div class="col-sm-6" id = "eatingdisorder">
+                 
+   <div class = "illness">
+                       
+ <h3 style="text-align: center;">Eating Disorder</h3>
+        
+                <p style="text-align: justify;">An eating disorder is a mental disorder defined by abnormal eating habits that negatively affect a person's physical or mental health. Anxiety disorders, depression, and substance abuse are common among people with eating disorders.[2] These disorders do not include obesity.</p>
+                        <a href="eating_dashboard.html" class="btn btn-info" role="button" id = "screening-button">Take a Screening</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+            </div>
+        </div>
+
+        <script>
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("mySidebar").style.width = "70%";
+            }
+            
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+                document.getElementById("mySidebar").style.width = "17%";
+            }
+            
+            function fillContent() {
+                populateSidebar();
+            }
+            
+            function populateSidebar() {
+                var items = ["Dashboard", "Account Settings", "Health Assessment", "Book An Appointment", "Feedback", "Resources"];
+                var links = ["dashboard-patients.html", "acct_settings_dashboard.html", "#", "book-appointment.html", "feedback.html", "resources.html"];
+                
+                var sidebarItemModel = document.getElementById("sidebarItemModel");
+                for(itemNo in items) {
+                    var item = items[itemNo];
+                        sidebarItemModel.children[0].style.visibility = "hidden";
+                    sidebarItemModel.children[1].innerHTML = "<a href='"+links[itemNo]+"'>"+item+"</a>";
+                    if(document.title == item) {
+                        sidebarItemModel.children[0].style.visibility = "visible";
+                        sidebarItemModel.children[1].style.color = "#000";
+                        sidebarItemModel.children[2].style.visibility = "visible";
+                    }
+                    else
+                        sidebarItemModel.children[2].style.visibility = "hidden";
+                    sidebarItemModel.parentElement.insertBefore(sidebarItemModel.cloneNode(true), sidebarItemModel);
+                }
+                sidebarItemModel.remove();
+            }
+        </script>
+    </body>
+</html>

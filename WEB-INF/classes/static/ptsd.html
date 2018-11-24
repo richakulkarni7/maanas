@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Health Assessment</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset = "utf-8">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                    <style>
+                        body{
+                            font-family: Arial, Helvetica, sans-serif;
+                        }
+                    ul {
+                        li: right;
+                    }
+                    
+                    .navbar-default .navbar-nav > li > a {
+                        color: black;
+                        font-weight: bold;
+                        margin: 0;
+                    }
+                    
+                    .navbar-header > a {
+                        color: black;
+                        font-weight: bold;
+                    }
+                    
+                    .navbar {
+                        margin:0;
+                    }
+                    .button {
+                       background-color: #2196F3;
+                        border: none;
+                        margin-left:10px;
+                        color: white;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                    }
+                    
+                    .myRadio {
+                        display: block;
+                        position: relative;
+                        cursor: pointer;
+                        padding-left: 5vh;
+                        margin: 2vh;
+                        font-weight: normal;
+                    }
+                    
+                    .myRadio input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    
+                    .checkmark {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 20px;
+                        width: 20px;
+                        background-color: #eee;
+                        border-radius: 50%;
+                    }
+                    
+                    .myRadio:hover input ~ .checkmark {
+                        background-color: #ccc;
+                    }
+                    
+                    .myRadio input:checked ~ .checkmark {
+                        background-color: #2196F3;
+                    }
+                    
+                    .checkmark:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                    }
+                    
+                    .myRadio input:checked ~ .checkmark:after {
+                        display: block;
+                    }
+                    
+                    .question {
+                        font-weight: bold;
+                        background: #ECF0F1;
+                        padding: 2vh;
+                    }
+                    
+                    #submit-button {
+                        margin: 4vh auto 2vh auto;
+                        padding: 2vh;
+                        background-color: #2196F3;
+                        text-align: center;
+                        color: white;
+                        display: block;
+                        width: 20vw;
+                        opacity: 0.9;
+                        border: none;
+                    }
+                    
+                    
+                    #submit-button:hover {
+                        opacity:1;
+                    }
+                    
+                    #result {
+                        display: none;
+                        background: #ECF0F1;
+                        padding: 3vh;
+                        border-radius: 10px;
+                        
+                    }
+                    
+                    #consult-button {
+                        margin: 4vh auto 2vh auto;
+                        padding: 2vh;
+                        background-color: #2196F3;
+                        text-align: center;
+                        color: white;
+                        display: block;
+                        width: 20vw;
+                        opacity: 0.9;
+                        border: none;
+                    }
+                    
+                    
+                    #consult-button:hover {
+                        opacity:1;
+                    }
+
+                    .text-hin {
+            display: none;
+        }
+
+        .text-en {
+            display: block;
+        }
+
+        #switch-to-hindi, #switch-to-english > a {
+            text-decoration: underline;
+            cursor: pointer;
+            
+        }
+
+                    
+                    @media screen and (max-width: 700px) {
+                        #consult-button {
+                            width: 50vw;
+                        }
+                    }
+                    </style>
+                    </head>
+    <body onresize="w3_close()" onload="fillContent()">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class = "navbar-brand" href = "index.html" style = "padding: 0;"> <img src = "images/logo_name_h.png" height = 50px style = "float: left;"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id = "switch-to-hindi" onclick = "toggleLanguage(1)"><a>हिन्दी</a></li>
+                        <li id = "switch-to-english" onclick = "toggleLanguage(2)" style="display: none;"><a>English</a></li>
+                        <li><a href="index.html"><span class = "text-en">Home</span><span class = "text-hin">होम</span></a></li>
+                        <li><a href="about.html"><span class = "text-en">About</span><span class = "text-hin">अधिक जानकारी</span></a></li>
+                        <li><a href="get-started.html"><span class = "text-en">Get Started</span><span class = "text-hin">शुरुआत</span></a></li>
+                        <li><a href="resources.html"><span class = "text-en">Resources</span><span class = "text-hin">साधन</span></a></li>
+                        <li><a href="faqs.html"><span class = "text-en">FAQs</span><span class = "text-hin">प्रश्न</span></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class = "container">
+            <h1 style="text-align: center;"><span class="text-en">Self-Assessment for Post-Traumatic Stress Disorder</span><span class="text-hin">पोस्ट-ट्रमेटिक तनाव विकार के लिए स्व-मूल्यांकन</span></h1>
+            <p style="text-align: justify;"><span class="text-en">Posttraumatic stress disorder (PTSD) is a mental disorder that can develop after a person is exposed to a traumatic event, such as sexual assault, warfare, traffic collisions, or other threats on a person's life. Symptoms may include disturbing thoughts, feelings, or dreams related to the events, mental or physical distress to trauma-related cues, attempts to avoid trauma-related cues, alterations in how a person thinks and feels, and an increase in the fight-or-flight response</span><span class="text-hin"> पोस्ट-ट्राटमेटिक स्टैक्शन डिसऑर्डर (PTSD) एक मानसिक विकार है जिसे किसी व्यक्ति के जीवन पर यौन उत्पीड़न, युद्ध, यातायात के टकराव या अन्य खतरों जैसे एक दर्दनाक घटना से अवगत कराया जा सकता है। लक्षणों में परेशान विचारों, भावनाओं या घटनाओं से संबंधित सपने, मानसिक या शारीरिक परेशानियों से संबंधित संकेतों के लिए, आघात से संबंधित संकेतों से बचने का प्रयास, एक व्यक्ति कैसे सोचता है और महसूस करता है, और लड़ाई में वृद्धि या -फलाइट प्रतिक्रिया</span></p>
+            <p><span class="text-en"><b>Test reference:</b>The <a href=https://www.choicescounselingservices.com/test/test_ptsd.doc>PCL-C(PTSD) Checklist for Civilians)</a> given below is a toolkit used to measure the person's PTSD levels.</span></p>
+            <section id = "test" style="padding-top: 3vh">
+                <p><span class="text-en">Pick the answer that indicates how much you have been bothered by that problem in the last month.</span><span class="text-hin">जवाब चुनिए कि यह इंगित करता है कि आपको पिछले महीने में उस समस्या से कितनी परेशान किया गया था।</span></p>
+                <div id = "q1">
+                    <p class = "question"><span class="text-en">1. Repeated, disturbing memories, thoughts, or images of a stressful experience from the past?</span><span class="text-hin">। दोहराया, परेशान करने वाली यादें, विचार, या अतीत से एक तनावपूर्ण अनुभव की छवियों?</span></p>
+                    <label class = "myRadio"><div>Never</div>
+                        <input type="radio" value="1" name="q1">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Rarely</div>
+                        <input type="radio" value="2" name="q1">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Sometimes</div>
+                        <input type="radio" value="3" name="q1">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Often</div>
+                        <input type="radio" value="4" name="q1">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Very often</div>
+                        <input type="radio" value="5" name="q1">
+                            <span class="checkmark"></span>
+                            </label>
+                </div>
+                
+                <div id = "q2">
+                    <p class = "question"><span class="text-en">2. Repeated, disturbing dreams of a stressful experience from the past?</span><span class="text-hin">। अतीत से एक तनावपूर्ण अनुभव के बार-बार, परेशान करने वाले सपने?</span></p>
+                    <label class = "myRadio"><div>Never</div>
+                        <input type="radio" value="1" name="q2">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Rarely</div>
+                        <input type="radio" value="2" name="q2">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Sometimes</div>
+                        <input type="radio" value="3" name="q2">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Often</div>
+                        <input type="radio" value="4" name="q2">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Very often</div>
+                        <input type="radio" value="5" name="q2">
+                            <span class="checkmark"></span>
+                            </label>
+                </div>
+                
+                <div id = "q3">
+                    <p class = "question"><span class="text-en">3. Suddenly acting or feeling as if a stressful experience were happening again (as if you were reliving it)?</span><span class="text-hin">अचानक अभिनय या महसूस हो रहा है कि एक तनावपूर्ण अनुभव फिर से हो रहा है (जैसा कि आप इसे रिहा रहे थे)?</span></p>
+                    <label class = "myRadio"><div>Never</div>
+                        <input type="radio" value="1" name="q3">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Rarely</div>
+                        <input type="radio" value="2" name="q3">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Sometimes</div>
+                        <input type="radio" value="3" name="q3">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Often</div>
+                        <input type="radio" value="4" name="q3">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Very often</div>
+                        <input type="radio" value="5" name="q3">
+                            <span class="checkmark"></span>
+                            </label>
+                </div>
+                
+                <div id = "q4">
+                    <p class = "question"><span class="text-en">4. Feeling very upset when something reminded you of
+                    a stressful experience from the past?</span><span class="text-hin">। जब आपको कुछ याद दिलाया तो बहुत परेशान महसूस हो रहा है
+                    अतीत से एक तनावपूर्ण अनुभव?</span></p>
+                    <label class = "myRadio"><div>Never</div>
+                        <input type="radio" value="1" name="q4">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Rarely</div>
+                        <input type="radio" value="2" name="q4">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Sometimes</div>
+                        <input type="radio" value="3" name="q4">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Often</div>
+                        <input type="radio" value="4" name="q4">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Very often</div>
+                        <input type="radio" value="5" name="q4">
+                            <span class="checkmark"></span>
+                            </label>
+                </div>
+                
+                <div id = "q5">
+                    <p class = "question"><span class="text-en">5. Having physical reactions (e.g., heart pounding, trouble breathing, or sweating) when something reminded you of a stressful experience from the
+                    past?</span><span class="text-hin">भौतिक प्रतिक्रियाओं (जैसे, हृदय तेज़, श्वास लेने में परेशानी, या पसीना) जब कुछ ने आपको तनावपूर्ण अनुभव की याद दिलाया
+                    अतीत?</span></p>
+                    <label class = "myRadio"><div>Never</div>
+                        <input type="radio" value="1" name="q5">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Rarely</div>
+                        <input type="radio" value="2" name="q5">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Sometimes</div>
+                        <input type="radio" value="3" name="q5">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Often</div>
+                        <input type="radio" value="4" name="q5">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Very often</div>
+                        <input type="radio" value="5" name="q5">
+                            <span class="checkmark"></span>
+                            </label>
+                </div>
+                
+                <div id = "q6">
+                    <p class = "question"><span class="text-en">6. Avoid thinking about or talking about a stressful experience from the past or avoid having feelings related to it?</span><span class="text-hin">अतीत से तनावपूर्ण अनुभव के बारे में सोच या बात करने से बचें या होने से बचें</span></p>
+                    <label class = "myRadio"><div>Never</div>
+                        <input type="radio" value="1" name="q6">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Rarely</div>
+                        <input type="radio" value="2" name="q6">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Sometimes</div>
+                        <input type="radio" value="3" name="q6">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Often</div>
+                        <input type="radio" value="4" name="q6">
+                            <span class="checkmark"></span>
+                            </label>
+                    <label class = "myRadio"><div>Very often</div>
+                        <input type="radio" value="5" name="q6">
+                            <span class="checkmark"></span>
+                            </label>
+                </div>
+                
+                
+                
+                <div>
+                    <input type = "submit" value = "Submit" id = "submit-button" onclick = "calculate()">
+                        </div>
+            </section>
+            <section id = "result">
+                <h3 id = "result-type" style="text-align: center;"></h3>
+                <p style="text-align: justify;"></p>
+                <div>
+                    <center><a href="dashboard-patients.html" class="button">Consult a psychiatrist</a></center>
+                        </div>
+            </section>
+            
+            <script type="text/javascript">
+                var questions_p_list = document.getElementsByClassName("question");
+                var questions_div_list = []
+                var i = 0;
+                
+                for (q in questions_p_list)
+                {
+                    questions_p_list[q].parentNode.getElementsByTagName("label")[0].getElementsByTagName("div")[0].innerHTML = "<span class = \"text-en\">Never</span><span class = \"text-hin\">कभी नहीँ</span>"
+                    questions_p_list[q].parentNode.getElementsByTagName("label")[1].getElementsByTagName("div")[0].innerHTML = "<span class = \"text-en\">Rarely</span><span class = \"text-hin\">बहुत कम बार</span>"
+                    questions_p_list[q].parentNode.getElementsByTagName("label")[2].getElementsByTagName("div")[0].innerHTML = "<span class = \"text-en\">Sometimes</span><span class = \"text-hin\">कभी कभी</span>"
+                    questions_p_list[q].parentNode.getElementsByTagName("label")[3].getElementsByTagName("div")[0].innerHTML = "<span class = \"text-en\">Often</span><span class = \"text-hin\">अक्सर</span>"
+                    questions_p_list[q].parentNode.getElementsByTagName("label")[4].getElementsByTagName("div")[0].innerHTML = "<span class = \"text-en\">Very often</span><span class = \"text-hin\">बहुत अक्सर</span>"
+
+                }
+
+                var lang = localStorage.getItem("lang");
+        console.log(lang);
+        if(lang=="hindi")
+            switchLanguageToHindi(); 
+        else if (lang=="english")
+            switchLanguageToEnglish();          
+
+
+        function toggleLanguage(lang)
+        {
+
+            if(lang==1)
+            {
+                switchLanguageToHindi();
+                if (typeof(Storage) !== "undefined")
+                    localStorage.setItem("lang", "hindi");
+            }
+            else if(lang==2)
+            {
+                switchLanguageToEnglish();
+                if (typeof(Storage) !== "undefined")
+                    localStorage.setItem("lang", "english");
+            }
+
+            console.log(localStorage.getItem("lang"));
+
+        }
+        function switchLanguageToHindi() {
+
+            var english_text = document.getElementsByClassName("text-en");
+            var hindi_text= document.getElementsByClassName("text-hin");
+            console.log(english_text);
+            console.log(hindi_text);
+            var l = english_text.length;
+            var i;
+
+            for(i = 0; i <l; i++)
+            {
+                english_text[i].style.display = "none";
+                hindi_text[i].style.display = "block";
+            }
+            document.getElementById("switch-to-hindi").style.display = "none";
+            document.getElementById("switch-to-english").style.display = "block";
+        }
+
+        function switchLanguageToEnglish() {
+            var english_text = document.getElementsByClassName("text-en");
+            var hindi_text= document.getElementsByClassName("text-hin");
+            console.log(english_text);
+            console.log(hindi_text);
+            var l = hindi_text.length;
+            var i;
+
+            for(i = 0; i <l; i++)
+            {
+                english_text[i].style.display = "block";
+                hindi_text[i].style.display = "none";
+            }
+
+            document.getElementById("switch-to-hindi").style.display = "block";
+            document.getElementById("switch-to-english").style.display = "none";
+        }
+
+
+                function calculate()
+                {
+                    var ans_array = [];
+                    var i = 1;
+                    var ans = 0;
+                    var count = 0;
+                    for(i = 1; i <= 6; i++)
+                    {
+                        var q = document.getElementsByName("q"+i.toString());
+                        var j = 0;
+                        for(j = 0; j < 5; j++)
+                        {
+                            if(q[j].checked)
+                            {
+                                count++;
+                                ans_array[i-1] = q[j].value;
+                                ans += parseInt(q[j].value);
+                            }
+                        }
+                    }
+                    if(count!=6)
+                    {
+                        alert("Please answer all questions.");
+                        return false;
+                    }
+                    console.log(ans);
+                    
+                    var diag;
+                    
+                    if(ans <=9&&ans>=0) diag = "No PTSD likely"
+                    else if(ans<=13 &&ans>=10) diag = "PTSD possible"
+                    else if(ans>=14)  diag = "PTSD may be likely"
+                    
+                    document.getElementById("test").style.display = "none";
+                    document.getElementById("result-type").innerHTML = diag;
+                    document.getElementById("result").style.display = "block";
+                    
+                    return true;
+                    
+                }
+            
+                </script>
+        </div>
+    </body>
+</html>

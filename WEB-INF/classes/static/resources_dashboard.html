@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resources</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                    <style type="text/css">
+                        ul {
+                            li: right;
+                        }
+                    
+                    .navbar-default .navbar-nav > li > a {
+                        color: black;
+                        font-weight: bold;
+                        margin: 0;
+                    }
+                    
+                    .navbar-header > a {
+                        color: black;
+                        font-weight: bold;
+                    }
+                    
+                    .navbar {
+                        margin:0;
+                    }
+                    
+                    iframe {
+                        margin: auto;
+                        padding: 5vh;
+                    }
+                    
+                    .links-inner {
+                        border-radius: 10px;
+                        margin: auto;
+                        padding: 3vh;
+                        background: #ECF0F1;
+                    }
+                    
+                    @media screen and (max-width: 700px) {
+                        #screening-button {
+                            width: 50vw;
+                        }
+                        
+                        .col-sm-6 {
+                            padding-top: 4vh;
+                            padding-bottom: 4vh;
+                        }
+                    }
+                    .myFooter {
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 6vh;
+                        background-color: #2196F3;
+                        color: white;
+                        text-align: center;
+                        margin-top: 2vh;
+                    }
+                    </style>
+                    </head>
+    <body onresize="w3_close()" onload="fillContent()">
+        <!--Collapsible sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width: 17%;" id="mySidebar">
+            <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">&times;</button>
+            <!--User profile-->
+            <div style="width:100%; height:15%; display:flex;">
+                <div style="width:40%; display:flex; justify-content:flex-end; align-items:center;">
+                    <img id="patientProfilePic" src="" style="border-radius:50%; width:60%; margin-right:4%;"/>
+                </div>
+                <div style="width:60%; display:flex; flex-direction:column; justify-content:center; font-size:12px; color:#4285F4;">
+                    <p id="patientName" style="margin:0;"></p>
+                </div>
+            </div>
+            <!--Navigation Items-->
+            <div id="sidebarItemModel" style="width:100%; height:8%; display:flex; border:1px solid #E6EBF1;">
+                <div style="width:2%; height:100%; background:#4285F4"></div>
+                <div style="width:93%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-left:16%; color:#74838B;"></div>
+                <div style="width:5%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-right:12%; color:#74838B;">&gt;</div>
+            </div>
+            <div style="height:29%;"></div>
+            <div style="width:100%; height:8%; display:flex; border:1px solid #E6EBF1;">
+                <div style="width:2%; height:100%; background:#FFF"></div>
+                <div style="width:93%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-left:16%; color:#74838B;"><a href="user_logout">Sign Out</a></div>
+                <div style="width:5%; height:100%; display:flex; justify-content:flex-start; align-items:center; font-size:12px; padding-right:12%; color:#FFF;">&gt;</div>
+            </div>
+        </div>
+        <!--Heading-->
+        <div class="w3-main" style="margin-left:17%; height:100vh;">
+            <div style="height:15vh; display:flex; align-items:center; background:#4285F4;">
+                <button class="w3-button w3-xlarge w3-hide-large" style="width:5%; color:#FFF;" onclick="w3_open()">&#9776;</button>
+                <!--Logo & Branding-->
+                <div style="width:95%; height:100%; display:flex; flex-direction:row; align-items:center;">
+                    <div style="margin-left:4%;">
+                        <img src="images/logo_name_h_blue.png" style="height:55px; display:block;"/>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Content-->
+            <div class = "container">
+                <h1 style="text-align: center;">Resources</h1>
+                <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <hr>
+                <section id = "links">
+                    <h3 style="text-align: center;">Useful links</h3>
+                    <div class = "row">
+                        <div class = "col-sm-6" id = "general">
+                            <div class = "links-inner">
+                                <h3 style="text-align: center;">NGO's in India</h3>
+                                <ul>
+                                    <li><a href="http://www.nimhans.ac.in/">Nimhans</a></li>
+                                    <li><a href="http://www.themindresearchfoundation.org/">Mind Research Foundation</a></li>
+                                    <li><a href="http://thebanyan.org/">The Banyan</a></li>
+                                    <li><a href="http://www.aasra.info/">Aasra</a></li>
+                                    <li><a href="http://www.cadabams.org/">Cadabams</a></li>
+                                    <li><a href="http://www.hopetrustindia.com/">Hope Trust India</a></li>
+                                    <li><a href="https://chaaipani.com/sanjivini-lets-talk-depression/">Chaaipani</a></li>
+                                    <li><a href="http://www.shraddharehabilitationfoundation.org/">Shraddha</a></li>
+                                    <li><a href="http://www.nibsindia.org/diagnostics.html">National Institute of Behavioural Sciences</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class = "col-sm-6" id = "specific">
+                            <div class = "links-inner">
+                                <h3 style="text-align: center;">Online Therapy and Helpline Links</h3>
+                                <ul>
+                                    <li><a href="http://www.seraniti.com/">Seraniti</a></li>
+                                    <li><a href="https://www.hopenetwork.in/">Hope Network</a></li>
+                                    <li><a href="https://www.ewellnessexpert.com/">eWellness Expert</a></li>
+                                    <li><a href="https://www.juno.clinic/">JunoClinic</a></li>
+                                    <li><a href="http://epsyclinic.com/">ePsyclinic</a></li>
+                                    <li><a href="http://lifelinefoundation.co.in/">LifeLine Foundation</a></li>
+                                    <li><a href="http://sumaitri.net/">Sumaitri</a></li>
+                                    <li><a href="http://icallhelpline.org/">iCALL</a></li>
+                                    <li><a href="http://www.sahaihelpline.org/">Sahai</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+                <hr>
+                <section id = "videos">
+                    <h3 style="text-align: center;">Talks &amp; Seminars</h3>
+                    <iframe src="https://www.youtube.com/embed/VFX2Nqwwm44" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Rv9SwZWVkOs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/U2uPMmnv8Jg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/IDPDEKtd2yM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/ofjRnIpXBF0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/SVe4lAUyY8M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/QzPbY9ufnQY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/Dg5ok_OfNf0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/LxxeEha8FX4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/njESlZa2b10"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/chE00kGtg48" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/_re6AX3Mi4s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    
+                    
+                    
+                </section>
+            </div>
+            
+            <footer class = "navbar-default myFooter">
+                <div class = "container-fluid" style="vertical-align: middle; font-size: 80%; margin: auto;">
+                    <br>
+                    <div class = "row" style="padding: 0;">
+                        <div class = "col-sm-3 col-xs-4" > 2018  </div>
+                        <div class = "col-sm-3 col-xs-0"> </div>
+                        <div class = "col-sm-3 col-xs-0">
+                            <a href = "contactus.html" target = "_blank" style="color: white;">Contact Us</a>
+                        </div>
+                        <div class = "col-sm-1 col-xs-4" style="text-align: center;"> 
+                            <a href = "#" target = "_blank" style="color: white;"> <img src = "images\facebook_small.png" style="vertical-align: middle; text-decoration: none; "> Facebook </a>
+                        </div>
+                        <div class= "col-sm-1 col-xs-0"> </div>
+                        <div class = "col-sm-1 col-xs-4" style="text-align: center;"> 
+                            <a href = "#" target = "_blank" style="color: white;"> <img src = "images\twitter_small.png" style="vertical-align: middle; text-decoration: none; "> Twitter </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <script>
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+                document.getElementById("mySidebar").style.width = "70%";
+            }
+        
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("mySidebar").style.width = "17%";
+        }
+        
+        function fillContent() {
+            fillProfileInfo();
+            populateSidebar();
+        }
+        
+        function fillProfileInfo() {
+            var result = $.ajax({
+                url :'user_profile',
+                method:'get',
+                success: function(){
+                    var patientData= result.responseJSON;
+                    document.getElementById("patientProfilePic").setAttribute('src', "data:img/*;base64, " + patientData.profilePicture);
+                    document.getElementById("patientName").innerHTML = patientData.name;
+                }
+
+            });
+        }
+            
+        function populateSidebar() {
+            var items = ["Dashboard", "Account Settings", "Health Assessment", "Book An Appointment", "Feedback", "Resources"];
+            var links = ["user_dashboard", "acct_settings_dashboard.html", "Self_Assessment_dashboard.html", "user_book_appointment", "#"];
+            
+            var sidebarItemModel = document.getElementById("sidebarItemModel");
+            for(itemNo in items) {
+                var item = items[itemNo];
+                sidebarItemModel.children[0].style.visibility = "hidden";
+                sidebarItemModel.children[1].innerHTML = "<a href='"+links[itemNo]+"'>"+item+"</a>";
+                if(document.title == item) {
+                    sidebarItemModel.children[0].style.visibility = "visible";
+                    sidebarItemModel.children[1].style.color = "#000";
+                    sidebarItemModel.children[2].style.visibility = "visible";
+                }
+                else
+                sidebarItemModel.children[2].style.visibility = "hidden";
+                sidebarItemModel.parentElement.insertBefore(sidebarItemModel.cloneNode(true), sidebarItemModel);
+            }
+            sidebarItemModel.remove();
+        }
+        </script>
+    </body>
+</html>

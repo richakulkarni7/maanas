@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Review FAQs</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+    ul {
+        li: right;
+    }
+    .navbar-default .navbar-nav > li > a {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
+    .navbar-header > a {
+        color: black;
+        font-weight: bold;
+    }
+    .navbar {
+        margin:0;
+    }
+
+    th {
+        background-color: #2196F3;
+        color: white;
+        text-align: center;
+    }
+
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 3vh;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    }
+
+
+    /* The Close Button */
+    .close {
+        float: right;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-header {
+        padding: 2px 16px;
+    }
+
+    .modal-body {padding: 2px 16px;}
+
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class = "navbar-brand" href = "index.html" style = "padding: 0;"> <img src = "/images/logo_name_h.png" height = 50px style = "float: left;"></a>
+	
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="admin_doctor_verification.html">Doctor Verification</a></li>
+                    <li class = "active"><a href="#">Review FAQs</a></li>
+                    <li><a href="#">Log out</a></li> 
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "container">
+        <h2 align = "center">Review FAQ Suggestions</h2>
+        <hr>
+        <table id = "myTable" class = "table table-hover">
+            <tr>
+                <th>S. No.</th>
+                <th>Asked on</th>
+                <th>Question</th>
+                <th></th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>01-01-1970</td>
+                <td id = "question">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>01-01-1970</td>
+                <td id = "question">2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>01-01-1970</td>
+                <td id = "question">3. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>01-01-1970</td>
+                <td id = "question">4. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>01-01-1970</td>
+                <td id = "question">5. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>01-01-1970</td>
+                <td id = "question">6. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>01-01-1970</td>
+                <td id = "question">7. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>01-01-1970</td>
+                <td id = "question">8. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick = "ignoreQuestion(this)">Ignore</button></td>
+                <td><button type="button" class="btn btn-primary" style="background-color: #2196F3" onclick="modalAnswer(this)">Answer</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" style="font-weight: bold;">&times;</span>
+            </div>
+            <div class="modal-body">
+                <h5 id = "showQuestion" style="font-weight: bold;"></h5>
+                <textarea class="form-control" placeholder="Your answer..."></textarea>
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <button type="button" id = "answer" class="btn btn-primary" style="background-color: #2196F3; margin: 2vh auto;">Answer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName("close")[0];
+        var answerbt = document.getElementById('answer');
+        var modalquestion = document.getElementById("showQuestion");
+
+        function modalAnswer(el) {
+            modal.style.display = "block";
+            var parent = el.parentNode.parentNode;
+            modalquestion.innerHTML = parent.children[2].innerHTML;
+
+        }
+
+        function ignoreQuestion(el) {
+            el.parentNode.parentNode.style.display = "none";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        answerbt.onclick = function() {
+            modal.style.display = "none";
+        }
+
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+  
+</body>
+</html>

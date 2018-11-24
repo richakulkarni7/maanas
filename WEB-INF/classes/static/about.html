@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>About Us</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<style type="text/css">
+    ul {
+        li: right;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    .navbar-header > a {
+        color: black;
+        font-weight: bold;
+    }
+
+    .navbar {
+        margin:0;
+    }
+
+        .text-hin {
+            display: none;
+        }
+
+        .text-en {
+            display: block;
+        }
+
+        #switch-to-hindi, #switch-to-english > a {
+            text-decoration: underline;
+            cursor: pointer;
+            
+        }
+
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class = "navbar-brand" href = "index.html" style = "padding: 0;"> <img src = "images/logo_name_h.png" height = 50px style = "float: left;"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id = "switch-to-hindi" onclick = "toggleLanguage(1)"><a>हिन्दी</a></li>
+                    <li id = "switch-to-english" onclick = "toggleLanguage(2)" style="display: none;"><a>English</a></li>
+                    <li><a href="index.html"><span class = "text-en">Home</span><span class = "text-hin">होम</span></a></li>
+                    <li class="active"><a href="about.html"><span class = "text-en">About</span><span class = "text-hin">अधिक जानकारी</span></a></li>
+                    <li><a href="get-started.html"><span class = "text-en">Get Started</span><span class = "text-hin">शुरुआत</span></a></li>
+                    <li><a href="resources.html"><span class = "text-en">Resources</span><span class = "text-hin">साधन</span></a></li>
+                    <li><a href="faqs.html"><span class = "text-en">FAQs</span><span class = "text-hin">प्रश्न</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class = "container">
+        <h1 style="text-align: center;"><span class = "text-en">About Us</span><span class = "text-hin">अधिक जानकारी</span></h1>
+        <div><img src = "images/logo_name.png" height="300vh" style="display: block; margin: auto;"></div>
+        <p style="text-align: justify;" class = "text-en">Lack of access to proper information and services is one of the biggest obstacles to improving the mental health of our communities. We help improve the mental health of our communities by increasing access to proper information and services. Our site, Maanas, is committed to improve the wellbeing of the people we serve. Our aim is to build better lives for Indians who are affected by mental illnesses. An added advantage of the web portal is that the data entered by patients can be used by mental health researchers to gain information about demographics. This will help solve the long-term problem of lack of mental health research in India.</p><p class = "text-hin">उचित जानकारी और सेवाओं तक पहुंच का अभाव हमारे समुदायों के मानसिक स्वास्थ्य में सुधार के लिए सबसे बड़ी बाधा है। उचित जानकारी और सेवाओं तक पहुंच बढ़ाने के द्वारा हम अपने समुदायों के मानसिक स्वास्थ्य को बेहतर बनाने में सहायता करते हैं। हमारी साइट, मानस, हम जिन लोगों की सेवा करते हैं, उनके कल्याण को बेहतर बनाने के लिए प्रतिबद्ध हैं। हमारा लक्ष्य मानसिक बीमारियों से प्रभावित भारतीयों के लिए बेहतर जीवन का निर्माण करना है। वेब पोर्टल का एक अतिरिक्त लाभ यह है कि मरीजों द्वारा दर्ज डेटा जनसांख्यिकी के बारे में जानकारी हासिल करने के लिए मानसिक स्वास्थ्य शोधकर्ताओं द्वारा उपयोग किया जा सकता है। इससे भारत में मानसिक स्वास्थ्य अनुसंधान की कमी की दीर्घकालिक समस्या को हल करने में मदद मिलेगी।</p>
+</div>
+
+<script type="text/javascript">
+        var lang = localStorage.getItem("lang");
+        console.log(lang);
+        if(lang=="hindi")
+            switchLanguageToHindi(); 
+        else if (lang=="english")
+            switchLanguageToEnglish();          
+
+
+        function toggleLanguage(lang)
+        {
+
+            if(lang==1)
+            {
+                switchLanguageToHindi();
+                if (typeof(Storage) !== "undefined")
+                    localStorage.setItem("lang", "hindi");
+            }
+            else if(lang==2)
+            {
+                switchLanguageToEnglish();
+                if (typeof(Storage) !== "undefined")
+                    localStorage.setItem("lang", "english");
+            }
+
+            console.log(localStorage.getItem("lang"));
+
+        }
+        function switchLanguageToHindi() {
+
+            var english_text = document.getElementsByClassName("text-en");
+            var hindi_text= document.getElementsByClassName("text-hin");
+            console.log(english_text);
+            console.log(hindi_text);
+            var l = english_text.length;
+            var i;
+
+            for(i = 0; i <l; i++)
+            {
+                english_text[i].style.display = "none";
+                hindi_text[i].style.display = "block";
+            }
+            document.getElementById("switch-to-hindi").style.display = "none";
+            document.getElementById("switch-to-english").style.display = "block";
+        }
+
+        function switchLanguageToEnglish() {
+            var english_text = document.getElementsByClassName("text-en");
+            var hindi_text= document.getElementsByClassName("text-hin");
+            console.log(english_text);
+            console.log(hindi_text);
+            var l = hindi_text.length;
+            var i;
+
+            for(i = 0; i <l; i++)
+            {
+                english_text[i].style.display = "block";
+                hindi_text[i].style.display = "none";
+            }
+
+            document.getElementById("switch-to-hindi").style.display = "block";
+            document.getElementById("switch-to-english").style.display = "none";
+        }
+    </script>
+  
+</body>
+</html>

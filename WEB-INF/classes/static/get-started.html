@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Get Started</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset = "UTF-8">
+<style type="text/css">
+    ul {
+        li: right;
+    }
+    .navbar-default .navbar-nav > li > a {
+        color: black;
+        font-weight: bold;
+        margin: 0;
+    }
+    .navbar-header > a {
+        color: black;
+        font-weight: bold;
+    }
+    .navbar {
+        margin:0;
+    }
+    
+
+    .text-hin {
+            display: none;
+        }
+
+        .text-en {
+            display: block;
+        }
+
+        #switch-to-hindi, #switch-to-english > a {
+            text-decoration: underline;
+            cursor: pointer;
+            
+        }
+
+</style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> 
+                </button>
+                <a class = "navbar-brand" href = "index.html" style = "padding: 0;"> 
+				  <img src = "images/logo_name_h.png" height = 50px style = "float: left;">
+				</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li id = "switch-to-hindi" onclick = "toggleLanguage(1)"><a>हिन्दी</a></li>
+                    <li id = "switch-to-english" onclick = "toggleLanguage(2)" style="display: none;"><a>English</a></li>
+                    <li><a href="index.html"><span class = "text-en">Home</span><span class = "text-hin">होम</span></a></li>
+                    <li><a href="about.html"><span class = "text-en">About</span><span class = "text-hin">अधिक जानकारी</span></a></li>
+                    <li class="active"><a href="get-started.html"><span class = "text-en">Get Started</span><span class = "text-hin">शुरुआत</span></a></li>
+                    <li><a href="resources.html"><span class = "text-en">Resources</span><span class = "text-hin">साधन</span></a></li>
+                    <li><a href="faqs.html"><span class = "text-en">FAQs</span><span class = "text-hin">प्रश्न</span></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class = "container">
+
+        <h1 class = "text-en" align="center">Get Started</h1><h1 class = "text-hin" align="center">शुरुआत करे</h1>
+        <p class = "text-en"align="justify">A visitor to the portal will be able to view various materials and resources related to mental health, such as common symptoms of various mental illnesses that would alert a visitor to seek mental health services for themselves or a loved one, thus solving to a large extent the problem of when to seek help.</p><p class = "text-hin" align="justify">पोर्टल के लिए एक विज़िटर मानसिक स्वास्थ्य से संबंधित विभिन्न सामग्रियों और संसाधनों को देखने में सक्षम होगा, जैसे कि विभिन्न मानसिक बीमारियों के आम लक्षण, जो आगंतुक को स्वयं या किसी प्रियजन के लिए मानसिक स्वास्थ्य सेवाओं की तलाश कर सकें, इस प्रकार एक बड़ी हद तक हल जब मदद की तलाश की समस्या</p>
+        <p class = "text-en"align="justify">Visitors will be able to use the portal by registering and logging in as either a patient or a mental health professional.Patients who register will provide basic personal details that will uniquely identify them in the database. After registration, a patient will fill out a basic risk assessment questionnaire consisting of a checklist of symptoms, that may be helpful in classifying their symptoms and requirements. They will then be provided with information about nearby mental health services using Google’s maps APIs. Once they have chosen a service, they will be able to schedule an appointment.</p><p class = "text-hin"align="justify">आगंतुकों को पंजीकरण या प्रवेश कर एक मरीज या एक मानसिक स्वास्थ्य पेशेवर के रूप में पोर्टल का उपयोग करने में सक्षम हो जाएगा। जो पंजीकृत हैं वे मूलभूत जानकारी प्रदान करेंगे जो कि उन्हें डेटाबेस में अद्वितीय रूप से पहचाना जाएगा। पंजीकरण के बाद, एक रोगी एक बुनियादी जोखिम मूल्यांकन प्रश्नावली को भर देता है जिसमें लक्षणों की एक चेकलिस्ट होती है, जो उनके लक्षणों और आवश्यकताओं को वर्गीकृत करने में सहायक हो सकता है। इसके बाद वे Google के नक्शे एपीआई का उपयोग कर आस-पास मानसिक स्वास्थ्य सेवाओं के बारे में जानकारी प्रदान करेंगे। एक बार जब वे एक सेवा का चयन करते हैं, तो वे नियुक्ति का समय निर्धारित करने में सक्षम होंगे।</p>
+        <p class = "text-en"align="justify">The patient may communicate with their chosen doctor via a dedicated channel, and also provide feedback after every appointment. Patients can also apply for medication renewal in consultation with their appointed professionals.Reminders of upcoming appointments can be sent to patients via text message or e-mail.Mental health professionals may register in the portal as well. This option is for practitioners, hospitals, as well as NGOs working in the field of mental health.</p><p class = "text-hin"align="justify">मरीज एक समर्पित चैनल के माध्यम से अपने चुने हुए डॉक्टर के साथ संवाद कर सकते हैं, और हर नियुक्ति के बाद भी प्रतिक्रिया प्रदान कर सकते हैं। रोगी अपने नियुक्त पेशेवरों के परामर्श से दवा नवीकरण के लिए भी आवेदन कर सकते हैं। आगामी नियुक्तियों के अनुस्मारकों को पाठ संदेश या ई-मेल के माध्यम से रोगियों को भेजा जा सकता है। मानसिक स्वास्थ्य पेशेवरों को भी पोर्टल में पंजीकरण कर सकते हैं यह विकल्प चिकित्सकों, अस्पतालों, साथ ही साथ मानसिक स्वास्थ्य के क्षेत्र में कार्य कर रहे गैर सरकारी संगठनों के लिए है।</p>   
+        <hr>
+        
+        <div class="row" >
+
+<div class=" col-sm-4 ">
+
+        <div class="row sub-section-margin-top">
+            <div class="col-sm-5 ">
+             <img src="images/user.png" height="70" width="70">
+            </div>
+        <div class="col-sm-7  padding-left-none xs-left-padding"><p class="step-title">Step 1</p><p class="step-contain">Make an account</p>
+         </div>
+        </div>
+
+
+        <div class="row sub-section-margin-top">
+            <div class=" col-sm-5">
+                 <img src="images/assess.png" height="70" width="70">
+             </div>
+        <div class=" col-sm-7 padding-left-none xs-left-padding"><p class="step-title">Step 2</p><p class="step-contain">Take the assessment Test</p>
+        </div>
+        </div>
+
+</div>
+
+
+
+<div class="col-sm-4 ">
+    <div class="row sub-section-margin-top">
+        <div class="col-sm-5 ">
+            <img src="images/sign-up.png" height="70" width="70">
+        </div>
+        <div class=" col-sm-7  padding-left-none xs-left-padding"><p class="step-title">Step 3</p><p class="step-contain"> Choose your Doctor in the nearest vicinity</p>
+        </div>
+    </div>
+
+
+    <div class="row sub-section-margin-top">
+         <div class=" col-sm-5">
+            <img src="images/appoi.png"  height="70" width="70">
+         </div>
+            <div class=" col-sm-7 padding-left-none xs-left-padding"><p class="step-title">Step 4</p><p class="step-contain">Book the Appointment</p>
+            </div>
+    </div>
+</div>
+
+</div>
+        
+        
+        </div>
+
+  
+
+    <script type="text/javascript">
+        var lang = localStorage.getItem("lang");
+        console.log(lang);
+        if(lang=="hindi")
+            switchLanguageToHindi(); 
+        else if (lang=="english")
+            switchLanguageToEnglish();          
+
+
+        function toggleLanguage(lang)
+        {
+
+            if(lang==1)
+            {
+                switchLanguageToHindi();
+                if (typeof(Storage) !== "undefined")
+                    localStorage.setItem("lang", "hindi");
+            }
+            else if(lang==2)
+            {
+                switchLanguageToEnglish();
+                if (typeof(Storage) !== "undefined")
+                    localStorage.setItem("lang", "english");
+            }
+
+            console.log(localStorage.getItem("lang"));
+
+        }
+        function switchLanguageToHindi() {
+
+            var english_text = document.getElementsByClassName("text-en");
+            var hindi_text= document.getElementsByClassName("text-hin");
+            console.log(english_text);
+            console.log(hindi_text);
+            var l = english_text.length;
+            var i;
+
+            for(i = 0; i <l; i++)
+            {
+                english_text[i].style.display = "none";
+                hindi_text[i].style.display = "block";
+            }
+            document.getElementById("switch-to-hindi").style.display = "none";
+            document.getElementById("switch-to-english").style.display = "block";
+        }
+
+        function switchLanguageToEnglish() {
+            var english_text = document.getElementsByClassName("text-en");
+            var hindi_text= document.getElementsByClassName("text-hin");
+            console.log(english_text);
+            console.log(hindi_text);
+            var l = hindi_text.length;
+            var i;
+
+            for(i = 0; i <l; i++)
+            {
+                english_text[i].style.display = "block";
+                hindi_text[i].style.display = "none";
+            }
+
+            document.getElementById("switch-to-hindi").style.display = "block";
+            document.getElementById("switch-to-english").style.display = "none";
+        }
+</script>
+</body>
+</html>
